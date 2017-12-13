@@ -1,0 +1,15 @@
+# Note: It requires docker-compose 1.17.1
+#
+# Usage: docker-compose up -d
+version: "3.0"
+
+services:
+  nexus_7.1.1:
+    container_name: nexus_7.1.1_emulator
+    image: emulator
+    privileged: true
+    ports:
+      - "5554:5554"
+      - "5555:5555"
+    environment:
+      - DEVICE=Nexus 6
