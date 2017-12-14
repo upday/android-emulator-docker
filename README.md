@@ -3,8 +3,8 @@
 Requirements
 ------------
 
-Docker is installed in your system.
-Docker Compose (1.17.1 or grater) in your system.
+* Docker is installed in your system.
+* Docker Compose (1.17.1 or grater) in your system.
 
 Quick Start
 -----------
