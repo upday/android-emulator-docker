@@ -96,7 +96,7 @@ def run():
     logger.info('Preparing emulator...')
     prepare_avd(device, avd_name)
 
-    cmd = 'emulator -avd {name} -no-window -wipe-data'.format(name=avd_name)
+    cmd = '/root/tools/emulator -avd {name} -no-window'.format(name=avd_name)
     logger.info('Run emulator with {command} ...'.format(command=cmd))
     subprocess.Popen(cmd.split())
 
