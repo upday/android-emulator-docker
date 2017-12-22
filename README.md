@@ -11,7 +11,7 @@ Quick Start
 
 1. Run in the cloned directory: 
 ```bash
-sudo docker build -t emulator .
+sudo docker build -t jaggernod/emulator .
 sudo docker-compose up -d
 ```
 
