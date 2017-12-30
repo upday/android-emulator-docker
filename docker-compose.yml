@@ -6,7 +6,7 @@ version: "3.0"
 services:
   nexus_7.1.1:
     container_name: nexus_6_7.1.1
-    image: jaggernod/emulator:0.3
+    image: jaggernod/emulator:0.4
     privileged: true
     ports:
       - "5554:5554"
