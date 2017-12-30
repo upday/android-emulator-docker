@@ -13,3 +13,4 @@ services:
       - "5555:5555"
     environment:
       - DEVICE=Nexus 6
+      - SKIP_AVD_CREATION
