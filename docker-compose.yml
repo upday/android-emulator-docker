@@ -15,7 +15,7 @@ services:
       - toolchain-network
     environment:
       - DEVICE=Nexus 6
-      - SKIP_AVD_CREATION=1
+      - SKIP_AVD_CREATION=True
 
 networks:
   toolchain-network:
