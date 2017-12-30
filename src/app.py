@@ -93,7 +93,8 @@ def run():
     avd_name = '{device}_{version}'.format(device=device.replace(' ', '_').lower(), version=ANDROID_VERSION)
     logger.info('AVD name: {avd}'.format(avd=avd_name))
 
-    if not os.getenv('SKIP_AVD_CREATION')
+    skip_creation = os.getenv'SKIP_AVD_CREATION')
+    if not skip_creation
         logger.info('Preparing emulator...')
         prepare_avd(device, avd_name)
 
