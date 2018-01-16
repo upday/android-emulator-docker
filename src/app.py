@@ -79,12 +79,10 @@ def prepare_avd(device: str, avd_name: str):
     logger.info('Command to create avd: {command}'.format(command=creation_cmd))
     subprocess.check_call(creation_cmd, shell=True)
 
-    skin_path = '/'.join([ANDROID_HOME, 'devices', 'skins', skin_name])
     config_path = '/'.join([avd_path, 'config.ini'])
     with open(config_path, 'a') as file:
-        file.write('skin.path={sp}'.format(sp=skin_path))
         file.write('hw.cpu.ncore=4')
-    logger.info('Skin was added in config.ini')
+    logger.info('Core amount have been increased config.ini')
 
 def run():
     """Run app."""
