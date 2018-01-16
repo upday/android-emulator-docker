@@ -83,6 +83,7 @@ def prepare_avd(device: str, avd_name: str):
     config_path = '/'.join([avd_path, 'config.ini'])
     with open(config_path, 'a') as file:
         file.write('skin.path={sp}'.format(sp=skin_path))
+        file.write('hw.cpu.ncore=4')
     logger.info('Skin was added in config.ini')
 
 def run():
