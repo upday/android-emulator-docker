@@ -97,7 +97,7 @@ def run():
         logger.info('Preparing emulator...')
         prepare_avd(device, avd_name)
 
-    cmd = '/root/tools/emulator -avd {name} -no-window -noaudio -port 5554'.format(name=avd_name)
+    cmd = '/root/tools/emulator -avd {name} -memory 4096 -no-window -noaudio -port 5554'.format(name=avd_name)
     logger.info('Run emulator with {command} ...'.format(command=cmd))
     subprocess.check_call(cmd, shell=True)
 

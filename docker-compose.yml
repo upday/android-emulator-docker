@@ -6,16 +6,12 @@ version: "3.0"
 services:
   nexus_7.1.1:
     container_name: emulator
-    image: jaggernod/emulator:latest
+    image: jaggernod/emulator:0.41
     privileged: true
     ports:
       - "5554:5554"
       - "5555:5555"
-    networks:
-      - toolchain-network
     environment:
       - DEVICE=Nexus 6
-      - SKIP_AVD_CREATION=True
+      - SKIP_AVD_CREATION=False
 
-networks:
-  toolchain-network:
