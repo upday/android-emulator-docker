@@ -16,6 +16,8 @@ WORKDIR /root
 #   Process manager
 # socat
 #   Port forwarder
+# net-tools
+#   Port forwarder
 #------------------
 #    KVM Package
 # for emulator x86
@@ -30,6 +32,7 @@ RUN apt-get -qqy update && apt-get -qqy install --no-install-recommends \
     xterm \
     supervisor \
     socat \
+    net-tools \
     qemu-kvm \
     libvirt-bin \
     ubuntu-vm-builder \
