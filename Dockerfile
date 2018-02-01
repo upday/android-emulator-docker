@@ -60,10 +60,7 @@ RUN rm ${ANDROID_HOME}/tools/emulator \
  && ln -s ${ANDROID_HOME}/emulator/emulator64-${PROCESSOR} ${ANDROID_HOME}/tools/emulator
 ENV LD_LIBRARY_PATH=$ANDROID_HOME/emulator/lib64:$ANDROID_HOME/emulator/lib64/qt/lib
 
-#================================================
-# IF SOMETHING'S BROKEN CHECK THIS, ELSE REMOVE
-#================================================
-# ENV LOG_PATH=/var/log/supervisor
+ENV LOG_PATH=/var/log/supervisor
 
 #===============
 # Expose Ports
