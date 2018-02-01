@@ -43,8 +43,8 @@ RUN apt-get -qqy update && apt-get -qqy install --no-install-recommends \
 # Install SDK packages
 #======================
 # TODO: REFACTOR
-ARG ANDROID_VERSION=5.0.1
-ARG API_LEVEL=21
+ARG ANDROID_VERSION=8.0.0
+ARG API_LEVEL=26
 ARG PROCESSOR=x86
 ARG SYS_IMG=x86_64
 ARG IMG_TYPE=google_apis
