@@ -82,8 +82,8 @@ RUN echo "${TZ}" > /etc/timezone
 #======================
 # Install SDK packages
 #======================
-ARG ANDROID_VERSION=8.0.0
-ARG API_LEVEL=26
+ARG ANDROID_VERSION=7.1.1
+ARG API_LEVEL=25
 ARG PROCESSOR=x86
 ARG SYS_IMG=x86
 ARG IMG_TYPE=google_apis
