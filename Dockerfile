@@ -61,10 +61,8 @@ ENV JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre" \
 # Install Android SDK
 #=====================
 ARG SDK_VERSION=sdk-tools-linux-3859397
-ARG ANDROID_BUILD_TOOLS_VERSION=26.0.0
 
 ENV SDK_VERSION=$SDK_VERSION \
-    ANDROID_BUILD_TOOLS_VERSION=$ANDROID_BUILD_TOOLS_VERSION \
     ANDROID_HOME=/root
 
 RUN wget -O tools.zip https://dl.google.com/android/repository/${SDK_VERSION}.zip && \
@@ -89,20 +87,16 @@ ARG API_LEVEL=25
 ARG PROCESSOR=x86
 ARG SYS_IMG=x86_64
 ARG IMG_TYPE=google_apis
-ARG BROWSER=android
 ENV ANDROID_VERSION=$ANDROID_VERSION \
     API_LEVEL=$API_LEVEL \
     PROCESSOR=$PROCESSOR \
     SYS_IMG=$SYS_IMG \
-    IMG_TYPE=$IMG_TYPE \
-    BROWSER=$BROWSER
+    IMG_TYPE=$IMG_TYPE
 ENV PATH ${PATH}:${ANDROID_HOME}/build-tools
 
 RUN mkdir -p ~/.android && \
     touch ~/.android/repositories.cfg && \
     echo y | sdkmanager "platform-tools" && \
-    echo y | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION" && \
-    echo y | sdkmanager "platforms;android-${API_LEVEL}" && \
     echo y | sdkmanager "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" && \
     echo y | sdkmanager "emulator"
 RUN rm ${ANDROID_HOME}/tools/emulator \
