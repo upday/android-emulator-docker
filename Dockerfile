@@ -82,8 +82,8 @@ RUN echo "${TZ}" > /etc/timezone
 #======================
 # Install SDK packages
 #======================
-ARG ANDROID_VERSION=5.0.1
-ARG API_LEVEL=25
+ARG ANDROID_VERSION=8.0.0
+ARG API_LEVEL=26
 ARG PROCESSOR=x86
 ARG SYS_IMG=x86_64
 ARG IMG_TYPE=google_apis
@@ -97,6 +97,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/build-tools
 RUN mkdir -p ~/.android && \
     touch ~/.android/repositories.cfg && \
     echo y | sdkmanager "platform-tools" && \
+    echo y | sdkmanager "platforms;android-${API_LEVEL}" && \
     echo y | sdkmanager "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" && \
     echo y | sdkmanager "emulator"
 RUN rm ${ANDROID_HOME}/tools/emulator \
