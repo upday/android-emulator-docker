@@ -48,6 +48,7 @@ RUN apt-get -qqy update && \
     libvirt-bin \
     ubuntu-vm-builder \
     bridge-utils \
+    python3 \
   && rm -rf /var/lib/apt/lists/*
 
 #===============
