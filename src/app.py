@@ -73,7 +73,7 @@ def prepare_avd(device: str, avd_name: str):
 
     avd_path = '/'.join([ANDROID_HOME, '.android/{avd_name}.avd'])
     creation_cmd = 'avdmanager create avd -f -n {name} -b {img_type}/{sys_img} -k "system-images;android-{api_lvl};' \
-        '{img_type};{sys_img}" -d {device} -p {path}'.format(name=avd_name, img_type=IMG_TYPE, sys_img=SYS_IMG,
+        '{img_type};{sys_img}" -d {device}'.format(name=avd_name, img_type=IMG_TYPE, sys_img=SYS_IMG,
                                                              api_lvl=API_LEVEL, device=device_name_bash)
     logger.info('Command to create avd: {command}'.format(command=creation_cmd))
     subprocess.check_call(creation_cmd, shell=True)
