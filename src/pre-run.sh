@@ -11,4 +11,4 @@ adb shell "settings put global window_animation_scale 0"
 expect $HOME/src/save-snapshot.sh
 
 adb emu kill
-kill -s SIGTERM $(cat $HOME/supervisord.pid)
+#kill -s SIGTERM $(cat $HOME/supervisord.pid)
