@@ -91,17 +91,13 @@ def run():
     avd_name = '{device}_{version}'.format(device=device.replace(' ', '_').lower(), version=ANDROID_VERSION)
     logger.info('AVD name: {avd}'.format(avd=avd_name))
 
-    cmd = ""
     if os.getenv('SKIP_AVD_CREATION', 'False') == 'False':
         logger.info('Preparing emulator...')
         prepare_avd(device, avd_name)
-        cmd = '/root/tools/emulator -avd {name} -memory 3072 -no-window -noaudio -port 5554'.format(name=avd_name)
-    else:
-        cmd = '/root/tools/emulator -avd {name} -memory 3072 -no-window -noaudio -port 5554 -snapshot default_boot'.format(name=avd_name)
 
+    cmd = '/root/tools/emulator -avd {name} -memory 3072 -no-window -noaudio -port 5554'.format(name=avd_name)
     logger.info('Run emulator with {command} ...'.format(command=cmd))
     subprocess.check_call(cmd, shell=True)
-
 
 if __name__ == '__main__':
     run()
