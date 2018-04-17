@@ -71,7 +71,7 @@ def prepare_avd(device: str, avd_name: str):
         logger.info('Hardware profile destination path: {dst}'.format(dst=profile_dst_path))
         symlink_force(profile_src_path, profile_dst_path)
 
-    avd_path = '/'.join([ANDROID_HOME, '.android/{name}.avd'.format(name=avd_name])
+    avd_path = '/'.join([ANDROID_HOME, '.android/{name}.avd'.format(name=avd_name)])
     creation_cmd = 'avdmanager create avd -f -n {name} -b {img_type}/{sys_img} -k "system-images;android-{api_lvl};' \
         '{img_type};{sys_img}" -d {device} -p {path}'.format(name=avd_name, img_type=IMG_TYPE, sys_img=SYS_IMG,
                                                              api_lvl=API_LEVEL, device=device_name_bash)
