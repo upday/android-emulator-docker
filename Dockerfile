@@ -49,6 +49,8 @@ RUN apt-get -qqy update && \
     ubuntu-vm-builder \
     bridge-utils \
     python3 \
+    telnet \
+    expect \
   && rm -rf /var/lib/apt/lists/*
 
 #===============
@@ -100,9 +102,11 @@ RUN mkdir -p ~/.android && \
     echo y | sdkmanager "platforms;android-${API_LEVEL}" && \
     echo y | sdkmanager "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" && \
     echo y | sdkmanager "emulator"
-RUN rm ${ANDROID_HOME}/tools/emulator \
- && ln -s ${ANDROID_HOME}/emulator/emulator64-${PROCESSOR} ${ANDROID_HOME}/tools/emulator
-ENV LD_LIBRARY_PATH=$ANDROID_HOME/emulator/lib64:$ANDROID_HOME/emulator/lib64/qt/lib
+# RUN rm ${ANDROID_HOME}/tools/emulator \
+#  && ln -s ${ANDROID_HOME}/emulator/emulator64-${PROCESSOR} ${ANDROID_HOME}/tools/emulator
+# ENV LD_LIBRARY_PATH=$ANDROID_HOME/emulator/lib64:$ANDROID_HOME/emulator/lib64/qt/lib
+
+RUN sdkmanager --update
 
 #===============
 # Expose Ports
