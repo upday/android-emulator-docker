@@ -66,7 +66,7 @@ def prepare_avd(device: str, avd_name: str):
     profile_dst_path = os.path.join(ROOT, '.android', 'devices.xml')
     if 'samsung' in device.lower():
         # profile file name = skin name
-        profile_src_path = os.path.join(ROOT, 'devices', 'profiles', '{profile}.xml'.format(profile=skin_name))
+        profile_src_path = os.path.join(ROOT, 'devices', 'profiles', 'devices.xml')
         logger.info('Hardware profile resource path: {rsc}'.format(rsc=profile_src_path))
         logger.info('Hardware profile destination path: {dst}'.format(dst=profile_dst_path))
         symlink_force(profile_src_path, profile_dst_path)
@@ -85,7 +85,7 @@ def prepare_avd(device: str, avd_name: str):
 
 def run():
     """Run app."""
-    device = os.getenv('DEVICE', 'Nexus 6')
+    device = os.getenv('DEVICE', 'Samsung S8')
     logger.info('Device: {device}'.format(device=device))
 
     avd_name = '{device}_{version}'.format(device=device.replace(' ', '_').lower(), version=ANDROID_VERSION)

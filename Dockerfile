@@ -97,6 +97,7 @@ RUN sdkmanager --update
 #===============
 EXPOSE 5554 5555
 
+COPY devices /root/devices
 COPY src /root/src
 COPY supervisord.conf /root/
 RUN chmod -R +x /root/src && chmod +x /root/supervisord.conf
